@@ -51,7 +51,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.android.internal.util.slim.BuildInfo;
+import com.android.internal.util.cmremix.BuildInfo;
 
 public class AboutSlim extends Fragment{
 
@@ -84,16 +84,16 @@ public class AboutSlim extends Fragment{
         @Override
         public void onClick(View v) {
             if (v == website) {
-                launchUrl("http://slimroms.net/");
+                launchUrl("https://plus.google.com/communities/104949237119230496561?hl=en");
             } else if (v == source) {
-                launchUrl("http://github.com/SlimRoms");
+                launchUrl("https://github.com/cmRemiX");
             } else if (v == donate) {
-                launchUrl("http://www.slimroms.net/index.php/donations");
+                launchUrl("http://forum.xda-developers.com/donatetome.php?u=4712992");
             } else if (v == irc) {
                 if (isCallable(IRC_INTENT)){
                     startActivity(IRC_INTENT);
                 } else {
-                    if (BuildInfo.getSlimBuildType().equals("UNOFFICIAL")) {
+                    if (BuildInfo.getcmremixBuildType().equals("UNOFFICIAL")) {
                         ircDialog();
                     } else {
                         toast(getResources().getString(R.string.no_irc));
@@ -183,12 +183,12 @@ public class AboutSlim extends Fragment{
         short state = sizer.sdAvailable();
         //initialize logfiles
         File extdir = Environment.getExternalStorageDirectory();
-        path = new File(extdir.getAbsolutePath().replace("emulated/0", "emulated/legacy") + "/Slim/Bugreport");
+        path = new File(extdir.getAbsolutePath().replace("emulated/0", "emulated/legacy") + "/cmRemiX/Bugreport");
         File savefile = new File(path + "/system.log");
         File logcat = new File(path + "/logcat.log");
         File last_kmsg = new File(path + "/last_kmsg.log");
         File kmsg = new File(path + "/kmsg.log");
-        File zip = new File(Environment.getExternalStorageDirectory() + "/Slim/bugreport.zip");
+        File zip = new File(Environment.getExternalStorageDirectory() + "/cmRemiX/bugreport.zip");
         systemfile = savefile.toString();
         logfile = logcat.toString();
         last_kmsgfile = last_kmsg.toString();

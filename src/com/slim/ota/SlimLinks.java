@@ -76,8 +76,8 @@ public class SlimLinks extends Fragment {
                 }
             } else if (v == mDownloadGapps) {
                 if (mStrCurFile != null
-                    && mStrCurFile.contains("4.4")) {
-                    launchUrl(getString(R.string.gapps_url_kitkat));
+                    && mStrCurFile.contains("5.0")) {
+                    launchUrl(getString(R.string.gapps_url_lollipop));
                 } else {
                     launchUrl(getString(R.string.gapps_url));
                 }

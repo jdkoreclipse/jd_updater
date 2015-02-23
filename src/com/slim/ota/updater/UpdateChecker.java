@@ -57,7 +57,7 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
     private static final int MSG_SET_PROGRESS = 2;
     private static final int MSG_CLOSE_DIALOG = 3;
 
-    private String strDevice, slimCurVer;
+    private String strDevice, cmremixCurVer;
     private Context mContext;
     private int mId = 1000001;
 
@@ -108,10 +108,10 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
             String strLine;
             while ((strLine = br.readLine()) != null) {
                 String[] line = strLine.split("=");
-                if (line[0].equalsIgnoreCase("ro.slim.device")) {
+                if (line[0].equalsIgnoreCase("ro.cmremix.device")) {
                     strDevice = line[1].trim();
-                } else if (line[0].equalsIgnoreCase("slim.ota.version")) {
-                    slimCurVer = line[1].trim();
+                } else if (line[0].equalsIgnoreCase("ro.cmremix.version")) {
+                    cmremixCurVer = line[1].trim();
                 }
             }
             br.close();
@@ -132,13 +132,13 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
         if (!connectivityAvailable(mContext)) return "connectivityNotAvailable";
         try {
             getDeviceTypeAndVersion();
-            if (mNoLog == false) Log.d(TAG, "strDevice="+strDevice+ "   slimCurVer="+slimCurVer);
-            if (strDevice == null || slimCurVer == null) return null;
+            if (mNoLog == false) Log.d(TAG, "strDevice="+strDevice+ "   cmremixCurVer="+cmremixCurVer);
+            if (strDevice == null || cmremixCurVer == null) return null;
             String newUpdateUrl = null;
             String newFileName = null;
             URL url = null;
-            if (slimCurVer != null && slimCurVer.contains("4.4")) {
-                url = new URL(mContext.getString(R.string.xml_url_kitkat));
+            if (cmremixCurVer != null && cmremixCurVer.contains("LP")) {
+                url = new URL(mContext.getString(R.string.xml_url_lollipop));
             } else {
                 url = new URL(mContext.getString(R.string.xml_url));
             }
@@ -179,7 +179,7 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
                         versionOnServer = tempFileName.split("\\-")[3]; // cmRemiX-trltetmo-5.0.2-20131221
                         cmremixCurVer = cmremixCurVer.split("\\-")[1]; // 5.0.2-20131221
 
-                        boolean needUpdate = isVersionNewer(versionOnServer, slimCurVer);
+                        boolean needUpdate = isVersionNewer(versionOnServer, cmremixCurVer);
                         putDataInprefs(mContext, "NeedUpdate", needUpdate == true ? "yes" : "no");
 
                         if (needUpdate) newFileName = tempFileName;
@@ -206,13 +206,13 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
         }
     }
 
-    private boolean isVersionNewer(String versionOnServer, String slimCurVersion) {
+    private boolean isVersionNewer(String versionOnServer, String cmremixCurVersion) {
         boolean versionIsNew = false;
 
         try {
 	    final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 	    Date serverDate = sdf.parse(versionOnServer);
-	    Date currentDate = sdf.parse(slimCurVersion);
+	    Date currentDate = sdf.parse(cmremixCurVersion);
 	    versionIsNew = serverDate.after(currentDate);
 	} catch(ParseException e){
 	    Log.e(TAG, "Cannot parse version", e);
