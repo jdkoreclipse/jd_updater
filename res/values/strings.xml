@@ -78,9 +78,9 @@
     <string name="gapps_url_lollipop" translatable="false">https://s.basketbuild.com/devs/Zion959/L/Gapps</string>
 
     <!-- cmRemiX OTA update checker -->
-    <string name="xml_url" translatable="false">https://doc-0k-1s-docs.googleusercontent.com/docs/securesc/83g1mobnq9grjl2u9ml3u2tq8dj93358/94jcer9oe35vnta8plcot9ojtbbagtqs/1424721600000/02160319466817757747/02160319466817757747/0B-fVzNDmvQSgbXFmSUN1NzBQT1k?e=download</string>
-    <string name="xml_url_kikat" translatable="false">https://doc-10-1s-docs.googleusercontent.com/docs/securesc/83g1mobnq9grjl2u9ml3u2tq8dj93358/77hh93olq4qt2a6cjerhnsrui57c90pc/1424721600000/02160319466817757747/02160319466817757747/0B-fVzNDmvQSgODd6UVl1cHJyMWM?e=download</string>
-    <string name="xml_url_lollipop" translatable="false">https://doc-0k-1s-docs.googleusercontent.com/docs/securesc/83g1mobnq9grjl2u9ml3u2tq8dj93358/94jcer9oe35vnta8plcot9ojtbbagtqs/1424721600000/02160319466817757747/02160319466817757747/0B-fVzNDmvQSgbXFmSUN1NzBQT1k?e=download</string>
+    <string name="xml_url" translatable="false">https://content.wuala.com/contents/zion959/cmRemiX%20OTA/ota.xml/?dl=1</string>
+    <string name="xml_url_kikat" translatable="false">https://content.wuala.com/contents/zion959/cmRemiX%20OTA/ota_kitkat.xml/?dl=1</string>
+    <string name="xml_url_lollipop" translatable="false">https://content.wuala.com/contents/zion959/cmRemiX%20OTA/ota_lollipop.xml/?dl=1</string>
     <string name="notification_message">cmRemiX update available</string>
 
     <!-- cmRemiX OTA About -->
