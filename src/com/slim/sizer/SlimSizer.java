@@ -1,18 +1,3 @@
-/*=========================================================================
- *
- *  PROJECT:  SlimRoms
- *            Team Slimroms (http://www.slimroms.net)
- *
- *  COPYRIGHT Copyright (C) 2013 Slimroms http://www.slimroms.net
- *            All rights reserved
- *
- *  LICENSE   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- *
- *  AUTHORS:     fronti90
- *  DESCRIPTION: SlimSizer: manage your apps
- *
- *=========================================================================
- */
 package com.slim.sizer;
 
 import java.io.BufferedWriter;

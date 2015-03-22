@@ -155,11 +155,11 @@ public class SlimOTA extends Fragment implements OnSharedPreferenceChangeListene
             String strLine;
             while ((strLine = br.readLine()) != null) {
                 String[] line = strLine.split("=");
-                if (line[0].equalsIgnoreCase("ro.cmremix.device")) {
+                if (line[0].equalsIgnoreCase("ro.product.model")) {
                     mStrCodename = line[1];
-                } else if (line[0].equalsIgnoreCase("ro.cmremix.version")) {
+                } else if (line[0].equalsIgnoreCase("ro.build.version.release")) {
                     mStrCurVer = line[1];
-                } else if (line[0].equalsIgnoreCase("ro.cmremix.model")) {
+                } else if (line[0].equalsIgnoreCase("ro.product.device")) {
                     mStrDevice = line[1];
                 } else if (line[0].equalsIgnoreCase("ro.modversion")) {
                     mStrCurFile = line[1];

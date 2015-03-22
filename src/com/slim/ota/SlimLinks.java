@@ -105,8 +105,8 @@ public class SlimLinks extends Fragment {
         mDownloadSummary = (TextView) getView().findViewById(R.id.short_cut_download_summary);
         mDownload.setOnClickListener(mActionLayouts);
 
-        mDownloadGapps = (LinearLayout) getView().findViewById(R.id.short_cut_download_gapps);
-        mDownloadGapps.setOnClickListener(mActionLayouts);
+        //mDownloadGapps = (LinearLayout) getView().findViewById(R.id.short_cut_download_gapps);
+        //mDownloadGapps.setOnClickListener(mActionLayouts);
 
         mFAQ = (LinearLayout) getView().findViewById(R.id.short_cut_faq);
         mFAQ.setOnClickListener(mActionLayouts);

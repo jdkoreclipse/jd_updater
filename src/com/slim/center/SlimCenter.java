@@ -108,7 +108,7 @@ ActionBar.TabListener{
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 1;
         }
 
         @Override
@@ -116,11 +116,7 @@ ActionBar.TabListener{
             Locale l = Locale.getDefault();
             switch (position) {
             case 0:
-                return getString(R.string.aboutslim_title).toUpperCase(l);                
-            case 1:
-                return getString(R.string.ota_title).toUpperCase(l);                
-            case 2:
-                return getString(R.string.sizer_title).toUpperCase(l);
+                return getString(R.string.ota_title).toUpperCase(l);
             }
             return null;
         }
@@ -128,11 +124,8 @@ ActionBar.TabListener{
         public android.support.v4.app.Fragment getItem(int page) {
             switch (page) {
             case 0:
-                return new AboutSlim();                
-            case 1:
                 return new SlimOTA();                
-            case 2:
-                return new SlimSizer();
+
             }
             return null;
         }

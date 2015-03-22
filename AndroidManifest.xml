@@ -38,13 +38,14 @@
         android:icon="@mipmap/ic_launcher_slimota"
         android:label="@string/app_name"
         android:launchMode="singleTask"
-        android:theme="@style/SlimOTA" >
+        android:theme="@style/Matlight" >
         <activity
             android:name="com.slim.center.SlimCenter"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
